@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         n8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ip.setText(ip.getText() + "9");
+                ip.setText(ip.getText() + "8");
             }
         });
 
@@ -121,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ip.setText("");
+                v1 = 0;
+                v2 = 0;
             }
         });
 
