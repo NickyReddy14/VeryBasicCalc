@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private Button n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, pt, add, sub, mul, div, mod, pm, eq, clr;
 
     float v1, v2, eql;
+    boolean sum, diff, prod, quot, rem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,63 +138,77 @@ public class MainActivity extends AppCompatActivity {
                 if (ip == null) {
                     ip.setText("");
                 } else {
-                    v1 = Float.parseFloat(crunchifyEditText.getText() + "");
-                    crunchifyAddition = true;
-                    crunchifyEditText.setText(null);
+                    v1 = Float.parseFloat(ip.getText() + "");
+                    add = true;
+                    ip.setText(null);
                 }
             }
         });
 
-        buttonSub.setOnClickListener(new View.OnClickListener() {
+        sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
-                mSubtract = true;
-                crunchifyEditText.setText(null);
+                v1 = Float.parseFloat(ip.getText() + "");
+                diff = true;
+                ip.setText(null);
             }
         });
 
-        buttonMul.setOnClickListener(new View.OnClickListener() {
+        mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
-                crunchifyMultiplication = true;
-                crunchifyEditText.setText(null);
+                v1 = Float.parseFloat(ip.getText() + "");
+                prod = true;
+                ip.setText(null);
             }
         });
 
-        buttonDivision.setOnClickListener(new View.OnClickListener() {
+        div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
-                crunchifyDivision = true;
-                crunchifyEditText.setText(null);
+                v1 = Float.parseFloat(ip.getText() + "");
+                quot = true;
+                ip.setText(null);
             }
         });
 
-        buttonEqual.setOnClickListener(new View.OnClickListener() {
+        mod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mValueTwo = Float.parseFloat(crunchifyEditText.getText() + "");
+                v1 = Float.parseFloat(ip.getText() + "");
+                rem = true;
+                ip.setText(null);
+            }
+        });
 
-                if (crunchifyAddition == true) {
-                    crunchifyEditText.setText(mValueOne + mValueTwo + "");
-                    crunchifyAddition = false;
+        eq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v2 = Float.parseFloat(ip.getText() + "");
+
+                if (sum == true) {
+                    ip.setText(v1 + v2 + "");
+                    sum = false;
                 }
 
-                if (mSubtract == true) {
-                    crunchifyEditText.setText(mValueOne - mValueTwo + "");
-                    mSubtract = false;
+                if (diff == true) {
+                    ip.setText(v1 - v2 + "");
+                    diff = false;
                 }
 
-                if (crunchifyMultiplication == true) {
-                    crunchifyEditText.setText(mValueOne * mValueTwo + "");
-                    crunchifyMultiplication = false;
+                if (prod == true) {
+                    ip.setText(v1 * v2 + "");
+                    prod = false;
                 }
 
-                if (crunchifyDivision == true) {
-                    crunchifyEditText.setText(mValueOne / mValueTwo + "");
-                    crunchifyDivision = false;
+                if (quot == true) {
+                    ip.setText(v1 / v2 + "");
+                    quot = false;
+                }
+
+                if (rem == true) {
+                    ip.setText(v1 / v2 + "");
+                    rem = false;
                 }
             }
         });
