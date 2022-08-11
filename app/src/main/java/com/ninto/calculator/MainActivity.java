@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                     ip.setText("");
                 } else {
                     v1 = Float.parseFloat(ip.getText() + "");
-                    add = true;
+                    sum = true;
                     ip.setText(null);
                 }
             }
