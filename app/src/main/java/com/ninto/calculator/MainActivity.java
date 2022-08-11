@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (rem == true) {
-                    ip.setText(v1 / v2 + "");
+                    ip.setText(v1 % v2 + "");
                     rem = false;
                 }
             }
